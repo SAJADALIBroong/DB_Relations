@@ -22,4 +22,8 @@ export class ProfileService {
       result: addProfile,
     };
   }
+
+  async findAll() {
+    return await this.profileRepository.find();
+  }
 }

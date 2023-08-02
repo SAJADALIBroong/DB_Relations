@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProfileModule } from './profile/profile.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserModule } from './user/user.module';
 import * as path from 'path';
 
 @Module({
@@ -21,6 +22,7 @@ import * as path from 'path';
       entities: [path.join(__dirname, './**/**.entity{.ts,.js}')],
     }),
     ProfileModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
