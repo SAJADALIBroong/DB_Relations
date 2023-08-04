@@ -15,6 +15,13 @@ export class User {
   @Column()
   name: string;
 
+  @Column()
+  userid: number;
+
+  @OneToOne(() => User, (user) => user.parent)
+  @JoinColumn({ name: 'user_id' })
+  parent: User;
+
   @OneToOne(() => Profile)
   @JoinColumn()
   profile: Profile;
